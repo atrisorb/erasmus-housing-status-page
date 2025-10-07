@@ -1,34 +1,78 @@
-# .upptimerc.yml
-
-# Il proprietario (tu) e il nome del repository.
 owner: atrisorb
-repo: atrisorb.github.io
+repo: status-page
 
-# Elenco dei siti da monitorare. Ho aggiunto sia il sito principale che l'API.
 sites:
   - name: Erasmus Housing
     url: https://www.erasmus-housing.com
   - name: Erasmus Housing API
     url: https://api.erasmus-housing.com
 
-# Configurazione della pagina di status
 status-website:
-  # L'URL base dove verrà pubblicata la pagina
-  baseUrl: /
-  # Logo, titolo e descrizione che appariranno sulla pagina
+  baseUrl: /status-page
   logoUrl: https://www.erasmus-housing.com/web-app-manifest-512x512.png
   name: Erasmus Housing Status
   introTitle: "Stato dei servizi di Erasmus Housing"
   introMessage: "Questa pagina mostra in tempo reale lo stato di salute del nostro sito e dei servizi associati. In caso di disservizi, troverai qui tutti gli aggiornamenti."
   
-  # --- PERSONALIZZAZIONE DELLO STILE ---
-  # Qui diciamo a Upptime di caricare un nostro file CSS personalizzato.
-  customStylesheets:
-    - /assets/styles.css # Nota: il file sorgente sarà .scss, ma Jekyll lo compila in .css
+  # --- INIZIO DELLA NUOVA CONFIGURAZIONE DI STILE ---
+  # Inseriamo tutto lo stile direttamente nell'head della pagina.
+  # Questo metodo è più affidabile del file CSS esterno.
+  customHeadHtml: |
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-# Assegna le "issues" di GitHub a te quando un servizio va offline
+    <style>
+      /* 1. Applica il nuovo font moderno a tutta la pagina */
+      body {
+        font-family: 'Inter', sans-serif !important;
+      }
+
+      /* 2. Rimpicciolisce il logo nell'header */
+      .container > .row:first-child .card img {
+        max-height: 80px !important;
+        width: auto !important;
+      }
+
+      /* 3. Applica il colore del tuo brand */
+      /* Colore per lo stato "UP" (operativo) */
+      :root {
+        --green: #F37F21 !important;
+      }
+
+      /* Stile per l'header della pagina */
+      .container > .row:first-child .card {
+        background: #F37F21 !important;
+        color: white !important;
+      }
+
+      /* Rende bianchi i link e i testi nell'header */
+      .container > .row:first-child .card h1,
+      .container > .row:first-child .card p,
+      .container > .row:first-child .card a {
+        color: white !important;
+      }
+
+      /* Rende più chiaro il link al passaggio del mouse */
+      .container > .row:first-child .card a:hover {
+        color: #ffd4b0 !important;
+      }
+
+      /* Colora il pallino dello stato "UP" di arancione */
+      .dot.--up {
+        background: #F37F21 !important;
+      }
+
+      /* Colora il grafico principale di arancione */
+      .chart-container .recharts-wrapper .recharts-surface .recharts-area-area path {
+          fill: rgba(243, 127, 33, 0.2) !important;
+          stroke: rgba(243, 127, 33, 0.5) !important;
+      }
+    </style>
+  # --- FINE DELLA NUOVA CONFIGURAZIONE DI STILE ---
+
 assignees:
   - atrisorb
 
 workflowSchedule:
-  uptime: '*/5 * * * *' # Controlla i siti ogni 5 minuti
+  uptime: '*/5 * * * *'
