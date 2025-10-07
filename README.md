@@ -9,4 +9,4 @@ Questa è la pagina di status per tutti i servizi di **Erasmus Housing**, genera
 ## [📈 Stato in tempo reale](https://atrisorb.github.io): Caricamento in corso...
 
 | URL | Stato | Cronologia | Tempo di risposta | Uptime |
-| --- | ------ | ------- | ------------- | ------ |
+| --- | ----- | ---------- | ----------------- | ------ |
