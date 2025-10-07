@@ -1,0 +1,37 @@
+// File: assets/styles.scss
+
+// Definisco il tuo colore principale come una variabile
+$brand-color: #F37F21;
+$brand-color-dark: #d86c13;
+
+// Colore per lo stato "UP" (operativo)
+:root {
+  --green: #{$brand-color} !important;
+}
+
+// Stile per l'header della pagina
+.container > .row:first-child .card {
+  background: $brand-color !important;
+  color: white !important;
+  
+  // Rende bianchi i link e i testi nell'header
+  h1, p, a {
+    color: white !important;
+  }
+  
+  // Rende arancione scuro il link al passaggio del mouse
+  a:hover {
+    color: #ffd4b0 !important;
+  }
+}
+
+// Colora il pallino dello stato "UP" di arancione
+.dot.--up {
+  background: $brand-color !important;
+}
+
+// Colora il grafico principale di arancione
+.chart-container .recharts-wrapper .recharts-surface .recharts-area-area path {
+    fill: rgba(243, 127, 33, 0.2) !important;
+    stroke: rgba(243, 127, 33, 0.5) !important;
+}
