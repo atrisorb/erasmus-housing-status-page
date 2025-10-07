@@ -23,20 +23,16 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
       
-      # --- INIZIO MODIFICA ---
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GH_PAT || github.token }}
-          publish_dir: "site/status-page/__sapper__/export/"
           
-          # Aggiunge un file .nojekyll per disabilitare Jekyll
+          # --- CORREZIONE DEFINITIVA QUI ---
+          # La cartella corretta è semplicemente "./site"
+          publish_dir: ./site
+          
           no_jekyll: true
-          
-          # Buona pratica per mantenere pulita la cronologia del branch di deploy
           force_orphan: true
-          
-          # Manteniamo le informazioni utente del bot
           user_name: "Upptime Bot"
           user_email: "73812536+upptime-bot@users.noreply.github.com"
-      # --- FINE MODIFICA ---
