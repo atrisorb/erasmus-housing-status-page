@@ -1,36 +1,34 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# .upptimerc.yml
 
+# Il proprietario (tu) e il nome del repository.
+owner: atrisorb
+repo: atrisorb.github.io
+
+# Elenco dei siti da monitorare. Ho aggiunto sia il sito principale che l'API.
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
-  - name: IPv6 test
-    url: forwardemail.net
-    port: 80
-    check: "tcp-ping"
-    ipv6: true
+  - name: Erasmus Housing
+    url: https://www.erasmus-housing.com
+  - name: Erasmus Housing API
+    url: https://api.erasmus-housing.com
 
+# Configurazione della pagina di status
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
-  navbar:
-    - title: Status
-      href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+  # L'URL base dove verrà pubblicata la pagina
+  baseUrl: /
+  # Logo, titolo e descrizione che appariranno sulla pagina
+  logoUrl: https://www.erasmus-housing.com/web-app-manifest-512x512.png
+  name: Erasmus Housing Status
+  introTitle: "Stato dei servizi di Erasmus Housing"
+  introMessage: "Questa pagina mostra in tempo reale lo stato di salute del nostro sito e dei servizi associati. In caso di disservizi, troverai qui tutti gli aggiornamenti."
+  
+  # --- PERSONALIZZAZIONE DELLO STILE ---
+  # Qui diciamo a Upptime di caricare un nostro file CSS personalizzato.
+  customStylesheets:
+    - /assets/styles.css # Nota: il file sorgente sarà .scss, ma Jekyll lo compila in .css
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+# Assegna le "issues" di GitHub a te quando un servizio va offline
+assignees:
+  - atrisorb
+
+workflowSchedule:
+  uptime: '*/5 * * * *' # Controlla i siti ogni 5 minuti
