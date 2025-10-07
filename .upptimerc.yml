@@ -8,7 +8,7 @@ sites:
     url: https://api.erasmus-housing.com
 
 status-website:
-  baseUrl: /status-page
+  baseUrl: /erasmus-housing-status-page
   logoUrl: https://www.erasmus-housing.com/web-app-manifest-512x512.png
   name: Erasmus Housing Status
   introTitle: "Stato dei servizi di Erasmus Housing"
