@@ -1,8 +1,8 @@
-owner: atrisorb
-repo: status-page
+# File: .upptimerc.yml (Versione corretta e definitiva)
 
-# Aggiungi un link alla pagina di status direttamente qui per comodità
-cname: atrisorb.github.io
+owner: atrisorb
+# 1. CORREZIONE: Il nome del repository deve essere esatto
+repo: erasmus-housing-status-page
 
 sites:
   - name: Erasmus Housing
@@ -11,52 +11,28 @@ sites:
     url: https://api.erasmus-housing.com
 
 status-website:
-  # --- CORREZIONE CHIAVE ---
-  # Assicuriamoci che il percorso base sia corretto per un repository di progetto
+  # 2. CORREZIONE: Il baseUrl deve corrispondere al nome del repository
   baseUrl: /erasmus-housing-status-page
+  
+  # Il resto della configurazione rimane invariato
   logoUrl: https://www.erasmus-housing.com/web-app-manifest-512x512.png
   name: Erasmus Housing Status
   introTitle: "Stato dei servizi di Erasmus Housing"
   introMessage: "Questa pagina mostra in tempo reale lo stato di salute del nostro sito e dei servizi associati. In caso di disservizi, troverai qui tutti gli aggiornamenti."
   
+  # 3. CORREZIONE: Usiamo customHeadHtml per applicare lo stile in modo affidabile
   customHeadHtml: |
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
     <style>
-      body {
-        font-family: 'Inter', sans-serif !important;
-      }
-
-      /* --- CORREZIONE CHIAVE PER IL LOGO --- */
-      /* Usiamo un selettore più specifico e robusto per il logo */
-      header .img-fluid {
-        max-height: 70px !important;
-        width: auto !important;
-      }
-
+      body { font-family: 'Inter', sans-serif !important; }
+      header .img-fluid { max-height: 70px !important; width: auto !important; }
       :root { --green: #F37F21 !important; }
-
-      header.container {
-        background: #F37F21 !important;
-        color: white !important;
-      }
-      
-      header.container h1,
-      header.container p,
-      header.container a {
-        color: white !important;
-      }
-
-      header.container a:hover {
-        color: #ffd4b0 !important;
-      }
-
-      .dot.--up {
-        background: #F37F21 !important;
-      }
-
+      header.container { background: #F37F21 !important; color: white !important; }
+      header.container h1, header.container p, header.container a { color: white !important; }
+      header.container a:hover { color: #ffd4b0 !important; }
+      .dot.--up { background: #F37F21 !important; }
       .chart-container .recharts-wrapper .recharts-surface .recharts-area-area path {
           fill: rgba(243, 127, 33, 0.2) !important;
           stroke: rgba(243, 127, 33, 0.5) !important;
