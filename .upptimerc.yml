@@ -1,26 +1,59 @@
-# File: .upptimerc.yml (Versione corretta e definitiva)
-
 owner: atrisorb
-# 1. CORREZIONE: Il nome del repository deve essere esatto
 repo: erasmus-housing-status-page
 
 sites:
-  - name: Erasmus Housing
+  - name: Erasmus Housing Website
     url: https://www.erasmus-housing.com
   - name: Erasmus Housing API
-    url: https://api.erasmus-housing.com/health
+    url: https://api.erasmus-housing.com/health/database
+  - name: Image Storage Service
+    url: https://api.erasmus-housing.com/health/storage
+  - name: Email Service (Resend)
+    url: https://api.erasmus-housing.com/health/email
+  - name: Maps API (Google)
+    url: https://api.erasmus-housing.com/health/maps
+  - name: Payment Services (Stripe)
+    url: https://api.erasmus-housing.com/health/payments
+  - name: Exchange Rates API
+    url: https://api.erasmus-housing.com/health/exchange-rates
+  - name: Notifications (Telegram)
+    url: https://api.erasmus-housing.com/health/telegram
+  - name: Notifications (Discord)
+    url: https://api.erasmus-housing.com/health/discord
 
 status-website:
-  # 2. CORREZIONE: Il baseUrl deve corrispondere al nome del repository
   baseUrl: /erasmus-housing-status-page
-  
-  # Il resto della configurazione rimane invariato
   logoUrl: https://www.erasmus-housing.com/web-app-manifest-512x512.png
   name: Erasmus Housing Status
-  introTitle: "Stato dei servizi di Erasmus Housing"
-  introMessage: "Questa pagina mostra in tempo reale lo stato di salute del nostro sito e dei servizi associati. In caso di disservizi, troverai qui tutti gli aggiornamenti."
   
-  # 3. CORREZIONE: Usiamo customHeadHtml per applicare lo stile in modo affidabile
+  # --- INIZIO MODIFICHE PER LA LINGUA INGLESE ---
+  introTitle: "Erasmus Housing Service Status"
+  introMessage: "This page provides real-time status updates for our website and associated services. If there are any interruptions, all updates will be posted here."
+  
+  # Aggiungiamo il blocco di internazionalizzazione per tradurre l'interfaccia
+  i18n:
+    en:
+      activeIncidents: Active Incidents
+      allSystemsOperational: All systems operational
+      incidentReport: "Incident #{incidentId} report"
+      activeIncidentSummary: "An incident is currently ongoing for {siteName}."
+      degradedPerformance: Degraded Performance
+      completeOutage: Complete Outage
+      partialOutage: Partial Outage
+      pastIncidents: Past Incidents
+      incidentHistory: Incident History
+      incidents: Incidents
+      incident: Incident
+      uptime: Uptime
+      response_time: Response Time
+      resolved: Resolved
+      inProgress: In Progress
+      investigating: Investigating
+      identified: Identified
+      monitoring: Monitoring
+      history: History
+  # --- FINE MODIFICHE PER LA LINGUA INGLESE ---
+
   customHeadHtml: |
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
