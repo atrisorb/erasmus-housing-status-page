@@ -8,7 +8,7 @@ sites:
   - name: Erasmus Housing
     url: https://www.erasmus-housing.com
   - name: Erasmus Housing API
-    url: https://api.erasmus-housing.com
+    url: https://api.erasmus-housing.com/health
 
 status-website:
   # 2. CORREZIONE: Il baseUrl deve corrispondere al nome del repository
