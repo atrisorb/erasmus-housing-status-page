@@ -1,7 +1,7 @@
 url: https://api.erasmus-housing.com/health/discord
-status: down
-code: 503
-responseTime: 108
-lastUpdated: 2025-10-29T08:45:53.682Z
+status: up
+code: 200
+responseTime: 172
+lastUpdated: 2025-10-29T08:58:11.607Z
 startTime: 2025-10-08T00:55:51.768Z
 generator: Upptime <https://github.com/upptime/upptime>
