@@ -1,7 +1,7 @@
 url: https://api.erasmus-housing.com/health/email
-status: up
-code: 200
-responseTime: 522
-lastUpdated: 2025-11-06T13:58:21.164Z
+status: down
+code: 403
+responseTime: 134
+lastUpdated: 2025-11-06T14:28:47.991Z
 startTime: 2025-10-08T00:55:48.105Z
 generator: Upptime <https://github.com/upptime/upptime>
