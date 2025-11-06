@@ -1,7 +1,7 @@
 url: https://api.erasmus-housing.com/health/database
-status: down
-code: 403
-responseTime: 606
-lastUpdated: 2025-11-05T23:23:43.255Z
+status: up
+code: 200
+responseTime: 564
+lastUpdated: 2025-11-06T13:58:15.600Z
 startTime: 2025-10-07T22:55:08.171Z
 generator: Upptime <https://github.com/upptime/upptime>
