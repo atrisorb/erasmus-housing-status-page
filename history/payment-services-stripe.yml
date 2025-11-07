@@ -1,7 +1,7 @@
 url: https://api.erasmus-housing.com/health/payments
-status: down
-code: 403
-responseTime: 91
-lastUpdated: 2025-11-06T23:22:55.456Z
+status: up
+code: 200
+responseTime: 466
+lastUpdated: 2025-11-07T01:18:53.635Z
 startTime: 2025-10-08T00:55:49.841Z
 generator: Upptime <https://github.com/upptime/upptime>
